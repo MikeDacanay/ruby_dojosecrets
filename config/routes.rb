@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   get 'users/:id' => 'users#show'
 
-  get 'users/edit'
-
   get 'sessions/new' 
 
   get 'users/:id/edit' => 'users#edit'
@@ -13,7 +11,11 @@ Rails.application.routes.draw do
 
   post 'users' => 'users#create'
 
+  patch 'users/:id' => 'users#update'
+
   delete 'sessions/:id' => 'sessions#destroy'
+
+  delete 'users/:id' => 'users#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
