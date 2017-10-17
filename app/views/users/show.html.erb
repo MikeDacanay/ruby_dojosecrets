@@ -1,2 +1,9 @@
-<h1>Welcome, <%= current_user.name %> </h1>
+<h1>Welcome, <%= current_user.name %></h1>
 <a href='/users/<%=current_user.id%>/edit'>Edit Profile</a> |
+
+<form action='/users/<%=current_user.id%>/secrets' method='post'>
+  	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">	
+	<label for='Content'>Secret</label>
+	<input type='text' name='Content'>
+	<input type='submit' value='Create Secret'>
+</form>

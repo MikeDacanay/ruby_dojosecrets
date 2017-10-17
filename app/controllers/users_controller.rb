@@ -16,6 +16,10 @@ class UsersController < ApplicationController
   def new
   end
 
+  def show
+    @hello = 'bye'
+  end 
+   
   def edit
   end 
 
