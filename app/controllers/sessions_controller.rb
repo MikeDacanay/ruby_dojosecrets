@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-  	User.find(params[:id])
+    session[:user_id] = nil
+  	# User.find(params[:id])
   	redirect_to '/sessions/new'
   end
 
@@ -18,7 +19,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to "/users/#{@user.id}"
   	else
-  		flash[:errors] = "Invalid Combination"
+  		flash[:errors] = ["Invalid Combination"]
   		redirect_to '/sessions/new'
   	end
   end

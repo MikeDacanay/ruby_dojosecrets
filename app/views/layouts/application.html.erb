@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<% if flash[:errors] %> 
-	  <%= flash[:errors] %>
+	<% if flash[:errors] %>
+	  <% flash[:errors].each do |e|%>
+	  	<%= e %>
+	  <% end %>
 	<% end %>	
 	<% if current_user %>
 	  <form action="/sessions/<%=current_user.id%>" method="post">
