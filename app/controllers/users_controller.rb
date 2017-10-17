@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @hello = 'bye'
+    @secrets = current_user.secrets.all.order(id: :DESC)
   end 
    
   def edit
