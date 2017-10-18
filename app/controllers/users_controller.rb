@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :login, only: [:new, :create]
+  before_action :check_user, only: [:show, :edit, :update, :destroy]
 
   def index
   	@user_name = User.find(params[:id]).name
@@ -41,4 +42,9 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     redirect_to '/users/new'
   end  
+
+  private
+    def check_user
+      redirect_to "/users/#{current_user.id}" if current_user != User.find(params[:id])
+    end
 end
