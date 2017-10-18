@@ -5,5 +5,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
+  	Like.find(params[:id]).delete
+  	redirect_to '/secrets'
   end
 end

@@ -32,10 +32,10 @@ feature 'Like Features' do
     scenario "unlike button is visible" do 
       expect(page).to have_button("Unlike")
     end
-  #   scenario "unliking will update like count" do 
-  #     click_button "Unlike"
-  #     expect(page).to_not have_button("Unlike")
-  #     expect(page).to have_text("0 likes")
-  #   end
+    scenario "unliking will update like count" do 
+      click_button "Unlike"
+      expect(page).to_not have_button("Unlike")
+      expect(page).to have_text("0 likes")
+    end
   end
 end

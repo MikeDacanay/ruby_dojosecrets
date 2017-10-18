@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   delete 'users/:id' => 'users#destroy'
 
   delete 'users/:id/secrets/:secret_id' => 'secrets#destroy'
+  delete 'likes/:id' => 'likes#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
