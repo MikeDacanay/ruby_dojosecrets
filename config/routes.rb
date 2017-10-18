@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   get 'likes/destroy'
 
-  get 'secrets/index'
-
   get 'users/new'
 
   get 'users/:id' => 'users#show'
@@ -13,7 +11,9 @@ Rails.application.routes.draw do
 
   get 'users/:id/edit' => 'users#edit'
 
-  get '/secrets' => 'secrets#index'
+  get 'secrets' => 'secrets#index'
+
+  post 'likes' => 'likes#create'
 
   post 'users/:id/secrets' => 'secrets#create'
 

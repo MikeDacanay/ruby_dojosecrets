@@ -1,6 +1,7 @@
 class SecretsController < ApplicationController
   def index
   	@all_secrets = Secret.all.order(id: :desc)
+    @all_likes = Like.where(user: current_user).select(:secret_id)
   end
 
   def create

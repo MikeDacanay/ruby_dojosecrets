@@ -1,5 +1,7 @@
 class LikesController < ApplicationController
   def create
+  	Like.create(user: current_user, secret: Secret.find(params[:secret_id]))
+  	redirect_to '/secrets'
   end
 
   def destroy

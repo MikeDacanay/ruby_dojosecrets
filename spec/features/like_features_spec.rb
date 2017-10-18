@@ -21,17 +21,17 @@ feature 'Like Features' do
       expect(page).to_not have_button("Like")
       expect(page).to have_text('1 likes')
     end
-  # end
-  # feature "secret has been liked" do 
-  #   before do 
-  #     @like = create(:like, user: @user, secret: @secret)
-  #   end
-  #   before(:each) do 
-  #     visit '/secrets'
-  #   end     
-  #   scenario "unlike button is visible" do 
-  #     expect(page).to have_button("Unlike")
-  #   end
+  end
+  feature "secret has been liked" do 
+    before do 
+      @like = create(:like, user: @user, secret: @secret)
+    end
+    before(:each) do 
+      visit '/secrets'
+    end     
+    scenario "unlike button is visible" do 
+      expect(page).to have_button("Unlike")
+    end
   #   scenario "unliking will update like count" do 
   #     click_button "Unlike"
   #     expect(page).to_not have_button("Unlike")
