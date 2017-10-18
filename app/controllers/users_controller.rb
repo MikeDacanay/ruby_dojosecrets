@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :login, only: [:new, :create]
+
   def index
   	@user_name = User.find(params[:id]).name
   end

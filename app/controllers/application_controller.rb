@@ -5,5 +5,10 @@ class ApplicationController < ActionController::Base
   def current_user
     User.find(session[:user_id]) if session[:user_id]
   end
+
+  def login
+  	redirect_to '/sessions/new' unless session[:user_id]
+  end
+
   helper_method :current_user
 end
